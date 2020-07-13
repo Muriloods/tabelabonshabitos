@@ -4,8 +4,7 @@
 	$habitos = Habitos::listar_habitos();
 	
 ?>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 	th
 	{
@@ -44,132 +43,132 @@
 </style>
 
 <table id="table_id" class="display dataTable">
-			<thead>
-				<tr>
-					<th>Data</th>
-					<th>Não fumar</th>
-					<th>Não beber</th>
-					<th>Acordar cedo</th>
-					<th>Musculação</th>
-					<th>Ler</th>
-					<th>Estudar</th>
-					<th>Correr</th>
-					<th>Beber agua</th>
-					<th>Ação</th>
-
-				</tr>
-			</thead>
-			<tbody>
-			<?php
-				foreach($habitos as $habito)
-				{
-					$id             = $habito['idHabito'];
-					$data           = Habitos::data($habito['data']);
-					$naoFumar       = $habito['naoFumar']        == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
-																			 <option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
-																			'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
-																			 <option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
-
-					$naoBeber       = $habito['naoBeber']        == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
+	<thead>
+		<tr>
+			<th>Data</th>
+			<th>Não fumar</th>
+			<th>Não beber</th>
+			<th>Acordar cedo</th>
+			<th>Musculação</th>
+			<th>Ler</th>
+			<th>Estudar</th>
+			<th>Correr</th>
+			<th>Beber agua</th>
+			<th>Ação</th>
+			<th style="display:none"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php
+			foreach($habitos as $habito)
+			{
+				$id             = $habito['idHabito'];
+				$data           = Habitos::data($habito['data']);
+				$naoFumar       = $habito['naoFumar']        == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
 																			<option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
-																		   '<option id="option1" class="select sim" value="sim">&#xf00c;</option>
+																		'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
 																			<option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
 
-					$acordarCedo    = $habito['acordarCedo']     == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
-																			 <option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
-																			'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
-																			 <option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
+				$naoBeber       = $habito['naoBeber']        == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
+																		<option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
+																		'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
+																		<option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
 
-					$musculacao     = $habito['musculacao']      == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
-																			 <option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
-																			'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
-																			 <option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
+				$acordarCedo    = $habito['acordarCedo']     == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
+																			<option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
+																		'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
+																			<option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
 
-					$ler            = $habito['ler']             == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
-																			 <option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
-																			'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
-																			 <option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
+				$musculacao     = $habito['musculacao']      == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
+																			<option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
+																		'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
+																			<option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
 
-					$estudar        = $habito['estudar']         == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
-																			 <option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
-																			'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
-																			 <option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
+				$ler            = $habito['ler']             == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
+																			<option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
+																		'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
+																			<option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
 
-					$correr         = $habito['correr']          == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
-																			 <option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
-																			'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
-																			 <option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
+				$estudar        = $habito['estudar']         == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
+																			<option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
+																		'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
+																			<option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
+
+				$correr         = $habito['correr']          == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
+																			<option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
+																		'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
+																			<option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
+			
+
+				$beberAgua      = $habito['beberAgua']       == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
+																			<option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
+																		'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
+																			<option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
 				
-
-					$beberAgua      = $habito['beberAgua']       == 'sim' ? '<option id="option" class="select sim" selected value="sim">&#xf00c;</option>
-																			 <option id="option1" class="select nao" value="nao">&#xf00d;</option>' : 
-																			'<option id="option1" class="select sim" value="sim">&#xf00c;</option>
-																			 <option id="option" class="select nao" selected value="nao">&#xf00d;</option>';
-					
-					$content = '
-					<tr>
-						<form action="backend/actions/editar-habitos.php" method="post">
-							<td>'. $data .'</td>
-							<td>
-								<select id="select" name="nao_fumar" disabled data-id="'. $id .'" class="select '.$habito['naoFumar'].'" name="" id="">
-									'. $naoFumar  .'  
-								</select>
-							</td>
-							<td>
-								<select id="select" name="nao_beber" disabled data-id="'. $id .'" class="select '.$habito['naoBeber'].'" name="" id="">
-									'. $naoBeber  .'  
-								</select>
-							</td>
-							<td>
-								<select id="select" name="acordar_cedo" disabled data-id="'. $id .'" class="select '.$habito['acordarCedo'].'" name="" id="">
-									'. $acordarCedo  .'  
-								</select>
-							</td>
-							<td>
-								<select id="select" name="musculacao" disabled data-id="'. $id .'" class="select '.$habito['musculacao'].'" name="" id="">
-									'. $musculacao  .'  
-								</select>
-							</td>
-							<td>
-								<select id="select" name="ler" disabled data-id="'. $id .'" class="select '.$habito['ler'].'" name="" id="">
-									'. $ler  .'  
-								</select>
-							</td>
-							
-							<td>
-								<select id="select" name="estudar" disabled data-id="'. $id .'" class="select '.$habito['estudar'].'" name="" id="">
-									'. $estudar  .'  
-								</select>
-							</td>
-							<td>
-								<select id="select" name="correr" disabled data-id="'. $id .'" class="select '.$habito['correr'].'" name="" id="">
-									'. $correr  .'  
-								</select>
-							</td>
-							<td>
-								<select id="select" name="beber_agua" disabled data-id="'. $id .'" class="select '.$habito['beberAgua'].'" name="" id="">
-									'. $beberAgua  .'  
-								</select>
-								<input type="hidden" name="id_habito" value="'. $id .'">
-							</td>
-							
-							<td class="none'.$id.'">
-								<a class="btn" data-id="'. $id .'"><i class="far fa-edit" ></i></a>
-								<a class="btn" id="excluir" data-id="'. $id .'"><i class="fas fa-trash"></i></a>
-							</td>
-							<td id="bt'.$id.'" style="display: none">
-								<input data-id="'.$id.'"type="submit" class="btn btn-primary" id="enviar" value="EDITAR" name="enviar">
-							</td>
-						</form>
-					</tr>
-					
-					
-					';
-					echo $content;
-				}
-				?>
-		</tbody>
-	</table>
+				$content = '
+				<tr>
+					<form action="backend/actions/editar-habitos.php" method="post">
+						<td>'. $data .'</td>
+						<td>
+							<select id="select" name="nao_fumar" disabled data-id="'. $id .'" class="select '.$habito['naoFumar'].'" name="" id="">
+								'. $naoFumar  .'  
+							</select>
+						</td>
+						<td>
+							<select id="select" name="nao_beber" disabled data-id="'. $id .'" class="select '.$habito['naoBeber'].'" name="" id="">
+								'. $naoBeber  .'  
+							</select>
+						</td>
+						<td>
+							<select id="select" name="acordar_cedo" disabled data-id="'. $id .'" class="select '.$habito['acordarCedo'].'" name="" id="">
+								'. $acordarCedo  .'  
+							</select>
+						</td>
+						<td>
+							<select id="select" name="musculacao" disabled data-id="'. $id .'" class="select '.$habito['musculacao'].'" name="" id="">
+								'. $musculacao  .'  
+							</select>
+						</td>
+						<td>
+							<select id="select" name="ler" disabled data-id="'. $id .'" class="select '.$habito['ler'].'" name="" id="">
+								'. $ler  .'  
+							</select>
+						</td>
+						
+						<td>
+							<select id="select" name="estudar" disabled data-id="'. $id .'" class="select '.$habito['estudar'].'" name="" id="">
+								'. $estudar  .'  
+							</select>
+						</td>
+						<td>
+							<select id="select" name="correr" disabled data-id="'. $id .'" class="select '.$habito['correr'].'" name="" id="">
+								'. $correr  .'  
+							</select>
+						</td>
+						<td>
+							<select id="select" name="beber_agua" disabled data-id="'. $id .'" class="select '.$habito['beberAgua'].'" name="" id="">
+								'. $beberAgua  .'  
+							</select>
+							<input type="hidden" name="id_habito" value="'. $id .'">
+						</td>
+						
+						<td class="none'.$id.'">
+							<a class="btn" data-id="'. $id .'"><i class="far fa-edit" ></i></a>
+							<a class="btn" id="excluir" data-id="'. $id .'"><i class="fas fa-trash"></i></a>
+						</td>
+						<td id="bt'.$id.'" style="display: none">
+							<input data-id="'.$id.'"type="submit" class="btn btn-primary" id="enviar" value="EDITAR" name="enviar">
+						</td>
+					</form>
+				</tr>
+				
+				
+				';
+				echo $content;
+			}
+		?>
+	</tbody>
+</table>
 	<script>
 		var campos = document.querySelectorAll('#select');
 		$(document).on("click", ".btn", function () {
