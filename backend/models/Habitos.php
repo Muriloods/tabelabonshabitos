@@ -67,12 +67,50 @@
 		 * 
 		 * @return bool sucesso ao editar ou falha
 		*/
-		public static function editar_habito($id_habito, $nome_do_habito, $novo_habito)
+		public static function editar_habito(
+			$idHabito, $nao_fumar, $nao_beber, $acordar_cedo, $musculacao,
+			$ler, $estudar, $correr,
+			$beber_agua
+		)
 		{
-			$sql = "UPDATE bons_habitos SET $nome_do_habito = :$novo_habito WHERE idHabito = :idHabito";
+			$sql = "
+				UPDATE
+					bons_habitos
+				SET
+					naoFumar    =  :naoFumar,
+					naoBeber    =  :naoBeber,
+					acordarCedo =  :acordarCedo,
+					musculacao  =  :musculacao,
+					ler         =  :ler,
+					estudar     =  :estudar,
+					correr      =  :correr,
+					beberAgua   =  :beberAgua
+				WHERE
+					idHabito    =  :idHabito
+
+			";
 			$sql = Connection::getConn()->prepare($sql);
-			$sql->bindValue(':idHabito', $id_habito);
+			$sql->bindValue(':idHabito',    $idHabito);
+			$sql->bindValue(':naoFumar',	$nao_fumar);
+			$sql->bindValue(':naoBeber',	$nao_beber);
+			$sql->bindValue(':acordarCedo',	$acordar_cedo);
+			$sql->bindValue(':musculacao',	$musculacao);
+			$sql->bindValue(':ler',			$ler);
+			$sql->bindValue(':estudar', 	$estudar);
+			$sql->bindValue(':correr',		$correr);
+			$sql->bindValue(':beberAgua',	$beber_agua);
+
 
 			return Connection::bdExecuta($sql) ? true : false;
+		}
+		/**
+		 * Converete data para o modelo brasileira
+		 *
+		 * @param string $data data nor formato yy/mm/dd
+		 * 
+		 * @return string data no formato dd/mm/yy
+		*/
+		public static function data($data){
+			return date("d/m/Y", strtotime($data));
 		}
     }

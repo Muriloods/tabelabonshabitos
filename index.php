@@ -42,66 +42,66 @@
 			<div class="col-lg-1.5 margin">
 				<form action="backend/actions/cadastrar-habitos.php" method="post">
                     <label class="text-muted blockquote text-center" for="">Não fumar</label>
-                    <select class="form-control " name="nao_fumar">
+                    <select class="form-control " name="nao_fumar" required>
                         <option value="">- Selecione -</option>
-						<option value="0" >Sim</option>
-						<option value="1" >Não</option>
+						<option value="sim" >Sim</option>
+						<option value="nao" >Não</option>
 			        </select>
 				</div>
 				<div class="col-lg-1.5 margin">
                     <label class="text-muted blockquote text-center" for="">Não beber</label>
-                   <select class="form-control " name="nao_beber">
+                   <select class="form-control " name="nao_beber" required>
                         <option value="">- Selecione -</option>
-						<option value="0" >Sim</option>
-						<option value="1" >Não</option>
+						<option value="sim" >Sim</option>
+						<option value="nao" >Não</option>
 			        </select>
 				</div>
 				<div class="col-lg-1.5 margin">
                     <label class="text-muted blockquote text-center" for="">Acordar cedo</label>
-                   <select class="form-control" name="acordar_cedo">
+                   <select class="form-control" name="acordar_cedo" required>
                         <option value="">- Selecione -</option>
-						<option value="0" >Sim</option>
-						<option value="1" >Não</option>
+						<option value="sim" >Sim</option>
+						<option value="nao" >Não</option>
 			        </select>
 				</div>
 				<div class="col-lg-1.5 margin">
                     <label class="text-muted blockquote text-center" for="">Musculação</label>
-                   <select class="form-control " name="musculacao">
+                   <select class="form-control " name="musculacao" required>
                         <option value="">- Selecione -</option>
-						<option value="0" >Sim</option>
-						<option value="1" >Não</option>
+						<option value="sim" >Sim</option>
+						<option value="nao" >Não</option>
 			        </select>
 				</div>
 				<div class="col-lg-1.5 margin">
                     <label class="text-muted blockquote text-center" for="">Ler</label>
-                   <select class="form-control " name="ler">
+                   <select class="form-control " name="ler" required>
                         <option value="">- Selecione -</option>
-						<option value="0" >Sim</option>
-						<option value="1" >Não</option>
+						<option value="sim" >Sim</option>
+						<option value="nao" >Não</option>
 			        </select>
 				</div>
 				<div class="col-lg-1.5 margin">
                     <label class="text-muted blockquote text-center" for="">Estudar</label>
-                   <select class="form-control " name="estudar">
+                   <select class="form-control " name="estudar" required>
                         <option value="">- Selecione -</option>
-						<option value="0" >Sim</option>
-						<option value="1" >Não</option>
+						<option value="sim" >Sim</option>
+						<option value="nao" >Não</option>
 			        </select>
 				</div>
 				<div class="col-lg-1.5 margin">
                     <label class="text-muted blockquote text-center" for="">Correr</label>
-                   <select class="form-control " name="correr">
+                   <select class="form-control " name="correr" required>
                         <option value="">- Selecione -</option>
-						<option value="0" >Sim</option>
-						<option value="1" >Não</option>
+						<option value="sim" >Sim</option>
+						<option value="nao" >Não</option>
 			        </select>
 				</div>
 				<div class="col-lg-1.5 margin">
                     <label class="text-muted blockquote text-center" for="">Beber agua</label>
-                   <select class="form-control" name="beber_agua">
+                   <select class="form-control" name="beber_agua" required>
                         <option value="">- Selecione -</option>
-						<option value="0" >Sim</option>
-						<option value="1" >Não</option>
+						<option value="sim" >Sim</option>
+						<option value="nao" >Não</option>
 			        </select>
 				</div>
 		</div>
@@ -125,4 +125,6 @@
 		$('#table_id').dataTable();
 	})
 </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
 
